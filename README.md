@@ -16,4 +16,4 @@ REACT_APP_EMOJI_API_KEY=
 
 ### Steps to solving the problem
 
-The `main` branch
+The `main` branch of this repository is set up to show how the `double` function inside of `App.js`
