@@ -19,19 +19,17 @@ export default function App() {
 
   return (
     <>
-      <form>
-        <input
-          type="number"
-          placeholder="number"
-          onChange={(e) => setNumber(Number(e.target.value))}
-        />
-        <div>{doubledNumber}</div>
-        <div>
-          {data.map((emoji) => {
-            return <span key={emoji.slug}>{emoji.character}</span>;
-          })}
-        </div>
-      </form>
+      <input
+        type="number"
+        placeholder="number"
+        onChange={(e) => setNumber(Number(e.target.value))}
+      />
+      <div>{doubledNumber}</div>
+      <div>
+        {data.map((emoji) => {
+          return <span key={emoji.slug}>{emoji.character}</span>;
+        })}
+      </div>
     </>
   );
 }
