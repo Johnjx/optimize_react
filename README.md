@@ -24,3 +24,16 @@ REACT_APP_EMOJI_API_KEY=
 - This is what we aim to fix. We don't want to make any unnecessary calls to an API if we don't have to.
 
 ![bad loggin](./src/assets/bad_logs.gif)
+
+**The Solution**
+
+- Wrapping `double` in a `useMemo` hook and adding `number` to it's dependency array will solve our problem for us.
+
+```js
+const doubledNumber = useMemo(() => {
+  return double(number);
+}, [number]);
+```
+
+- Be sure to import `useMemo` from react and be sure to return the `output of double` from within your useMemo.
+- Now your logs should not log a call to `double` when you're fetching the emoji data.
