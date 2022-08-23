@@ -2,20 +2,28 @@ import { useState } from "react";
 import "./styles.css";
 import { useFetch } from "./useFetch";
 
+function double(num) {
+  console.log("running algorithm");
+  for (let i = 0; i <= 10000; i++) {}
+  return num * 2;
+}
+
 export default function App() {
   const [number, setNumber] = useState(0);
-  const { data } = useFetch(
-    `https://emoji-api.com/categories/travel-places?access_key=${process.env.REACT_APP_EMOJI_API_KEY}`
-  );
-
-  console.log(data);
-  function double(num) {
-    console.log("running algorithm");
-    for (let i = 0; i <= 10000; i++) {}
-    return num * 2;
-  }
+  const [emojis, setEmojis] = useState({ data: [], loading: true });
 
   const doubledNumber = double(number);
+
+  function handleFetchEmojis() {
+    console.log("running");
+    fetch(
+      `https://emoji-api.com/categories/smileys-emotion?access_key=${process.env.REACT_APP_EMOJI_API_KEY}`
+    )
+      .then((data) => data.json())
+      .then((newData) => {
+        setEmojis({ data: newData });
+      });
+  }
 
   return (
     <>
@@ -26,10 +34,13 @@ export default function App() {
       />
       <div>{doubledNumber}</div>
       <div>
-        {data.map((emoji) => {
+        {emojis.data.map((emoji) => {
           return <span key={emoji.slug}>{emoji.character}</span>;
         })}
       </div>
+      <button type="button" onClick={handleFetchEmojis}>
+        Get Emojis
+      </button>
     </>
   );
 }
