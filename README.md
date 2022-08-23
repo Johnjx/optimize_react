@@ -22,4 +22,5 @@ REACT_APP_EMOJI_API_KEY=
 - If you look at the `console` you'll see that when clicking the `Get Emojis <button>` our logs inside the 'double function' get called as well.
 - `double` is an expensive algorithm (not really but it's faking it for the example) and we don't want to run it every time we call the API at the press of a button.
 - This is what we aim to fix. We don't want to make any unnecessary calls to an API if we don't have to.
-  ![bad_logs.mov](./src/assets/bad_logs.mov)
+
+![bad_logs.mov](./src/assets/bad_logs.mov)
