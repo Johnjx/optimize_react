@@ -3,8 +3,9 @@ import "./styles.css";
 import { useFetch } from "./useFetch";
 
 function double(num) {
-  console.log("running algorithm");
-  for (let i = 0; i <= 10000; i++) {}
+  console.log("running double algorithm");
+  // this is intentially a slower running algo.
+  for (let i = 0; i <= 100000; i++) {}
   return num * 2;
 }
 
@@ -15,7 +16,7 @@ export default function App() {
   const doubledNumber = double(number);
 
   function handleFetchEmojis() {
-    console.log("running");
+    console.log("running fetch emojis");
     fetch(
       `https://emoji-api.com/categories/smileys-emotion?access_key=${process.env.REACT_APP_EMOJI_API_KEY}`
     )

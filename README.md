@@ -16,4 +16,10 @@ REACT_APP_EMOJI_API_KEY=
 
 ### Steps to solving the problem
 
-The `main` branch of this repository is set up to show how the `double` function inside of `App.js`
+**The Problem**: The `main` branch of this repository is set up to show how it can be really easy to code yourself into a corner in React, especially when using the React Hooks pattern.
+
+- Inside of `App.js` you'll find that there is a simple button that, when pressed, fetches emojis and displays them to the user. There is also a 'doubler' function that takes a number value from an input and doubles it output and prints it to the DOM.
+- If you look at the `console` you'll see that when clicking the `Get Emojis <button>` our logs inside the 'double function' get called as well.
+- `double` is an expensive algorithm (not really but it's faking it for the example) and we don't want to run it every time we call the API at the press of a button.
+- This is what we aim to fix. We don't want to make any unnecessary calls to an API if we don't have to.
+  ![bad_logs.mov](./src/assets/bad_logs.mov)
