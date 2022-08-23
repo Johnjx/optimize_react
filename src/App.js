@@ -1,6 +1,5 @@
 import { useState } from "react";
 import "./styles.css";
-import { useFetch } from "./useFetch";
 
 function double(num) {
   console.log("running double algorithm");
