@@ -23,6 +23,4 @@ REACT_APP_EMOJI_API_KEY=
 - `double` is an expensive algorithm (not really but it's faking it for the example) and we don't want to run it every time we call the API at the press of a button.
 - This is what we aim to fix. We don't want to make any unnecessary calls to an API if we don't have to.
 
-<video width="320" height="240" controls>
-  <source src="./src/assets/bad_logs.mov" type="video/mp4">
-</video>
+![bad loggin](./src/assets/bad_logs.gif)
